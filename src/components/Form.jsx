@@ -13,25 +13,25 @@ export default function Form({ onAddItems }) {
   const [quantity, setQuantity] = useState(1);
 
   const essentialItems = [
-    "Companion 😃",
-    "Passport",
-    "Money",
-    "Phone",
-    "Clothes",
-    "Swimsuit",
-    "Hat",
-    "Sunglasses",
-    "Sunscreen",
-    "Medicine",
-    "Charger",
-    "Insect repellent",
+    "Companion 👫",
+    "Passport 🛂",
+    "Money 💵",
+    "Phone 📱",
+    "Clothes 👚",
+    "Swimsuit 👙",
+    "Hat 👒",
+    "Sunglasses 🕶",
+    "Sunscreen 🧴",
+    "Medicine 💊",
+    "Charger 🔋",
+    "Insect repellent 🦟",
   ];
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (!description) {
-      return alert("Please enter an item");
+      return alert("Please enter an item.");
     }
 
     const newItem = { description, quantity, packed: false, id: Date.now() };
@@ -63,7 +63,7 @@ export default function Form({ onAddItems }) {
             renderInput={(params) => <TextField {...params} label="Items" />}
           />
         </Stack>
-        <FormControl className="input-quantity" sx={{ m: 1, minWidth: 100 }}>
+        <FormControl className="input-quantity" sx={{ m: 1, minWidth: 80 }}>
           <InputLabel id="demo-simple-select-helper-label">Quantity</InputLabel>
           <Select
             labelId="demo-simple-select-helper-label"

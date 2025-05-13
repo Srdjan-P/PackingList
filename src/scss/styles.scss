@@ -9,16 +9,22 @@ $color1: rgba(255, 217, 151, 0.776);
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  min-height: 100%;
-  background-image: url(../img/background2.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  overflow-x: hidden;
+  position: relative;
+  &::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(../img/background2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+  }
 
   header {
-    width: 100%;
+    width: 100vw;
     min-height: 15vh;
     padding: 30px 0;
     display: flex;
@@ -46,7 +52,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 100vw;
     padding: 10px;
     background-color: $color1;
     border-top: 3px solid rgb(255, 255, 255);
@@ -66,14 +72,15 @@ body {
       .input-quantity {
         background-color: $color1;
         margin-right: 15px;
+        text-align: center;
       }
 
       .btn {
         height: 54px;
-        background-color: $color1;
+        background-color: rgba(60, 161, 255, 0.71);
         font-weight: bold;
         margin-left: 7px;
-        color: rgba(0, 0, 0, 0.464);
+        color: rgb(255, 255, 255);
         box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.211);
       }
     }
@@ -92,8 +99,8 @@ body {
       border-radius: 10px;
     }
     .clearList {
-      background-color: $color1;
-      color: black;
+      background-color: rgb(215, 102, 102);
+      color: rgb(255, 255, 255);
       font-weight: bold;
       padding: 8px 15px;
     }
@@ -103,6 +110,7 @@ body {
     padding: 0 10%;
     padding-bottom: 90px;
     max-width: 1600px;
+    width: 100%;
     margin: 0 auto;
     height: 100%;
     display: flex;
@@ -119,20 +127,27 @@ body {
       li {
         display: flex;
         align-items: center;
+        justify-content: center;
         position: relative;
         border-radius: 10px;
         list-style-type: none;
         padding: 10px;
         font-size: 20px;
         box-shadow: 0 0 0 100px rgba(253, 253, 220, 0.859) inset;
-        border: 2px solid rgb(187, 202, 139);
+        border: 2px solid $color1;
         margin: 5px;
         min-width: 250px;
         max-width: 250px;
         overflow: hidden;
         text-overflow: ellipsis;
 
-        span {
+        .check {
+          position: absolute;
+          left: 0;
+          margin: 0 7px;
+        }
+
+        .delete {
           position: absolute;
           right: 7px;
           margin: 0 7px;
@@ -148,7 +163,7 @@ body {
     align-items: center;
     position: fixed;
     bottom: 0;
-    width: 100%;
+    width: 100vw;
     padding: 10px 30px;
     text-align: center;
     background-color: $color1;

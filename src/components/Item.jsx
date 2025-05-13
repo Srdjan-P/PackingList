@@ -13,6 +13,7 @@ export default function Item({ item, onDeleteItem, onPackedItem }) {
       >
         <Checkbox
           {...label}
+          className="check"
           size="medium"
           sx={{
             color: green[800],
@@ -26,6 +27,7 @@ export default function Item({ item, onDeleteItem, onPackedItem }) {
           {item.quantity === 1 ? "" : item.quantity} {item.description}
         </p>
         <span
+          className="delete"
           onClick={(e) => {
             e.stopPropagation();
             onDeleteItem(item.id);
