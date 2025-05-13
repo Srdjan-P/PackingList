@@ -10,7 +10,7 @@ $color1: rgba(255, 217, 151, 0.776);
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  min-height: 100vh;
+  min-height: 100%;
   background-image: url(../img/background2.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -18,8 +18,9 @@ body {
   overflow-x: hidden;
 
   header {
-    width: 100vw;
+    width: 100%;
     min-height: 15vh;
+    padding: 30px 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,7 +46,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     padding: 10px;
     background-color: $color1;
     border-top: 3px solid rgb(255, 255, 255);
@@ -78,11 +79,34 @@ body {
     }
   }
 
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px 10%;
+
+    .sortBy {
+      background-color: $color1;
+      width: 200px;
+      border-radius: 10px;
+    }
+    .clearList {
+      background-color: $color1;
+      color: black;
+      font-weight: bold;
+      padding: 8px 15px;
+    }
+  }
+
   main {
-    padding: 40px 10%;
+    padding: 0 10%;
     padding-bottom: 90px;
     max-width: 1600px;
     margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 
     ul {
       list-style: none;
@@ -98,11 +122,11 @@ body {
         position: relative;
         border-radius: 10px;
         list-style-type: none;
-        padding: 15px;
+        padding: 10px;
         font-size: 20px;
         box-shadow: 0 0 0 100px rgba(253, 253, 220, 0.859) inset;
         border: 2px solid rgb(187, 202, 139);
-        margin: 10px;
+        margin: 5px;
         min-width: 250px;
         max-width: 250px;
         overflow: hidden;
@@ -124,7 +148,7 @@ body {
     align-items: center;
     position: fixed;
     bottom: 0;
-    width: 100vw;
+    width: 100%;
     padding: 10px 30px;
     text-align: center;
     background-color: $color1;
@@ -145,9 +169,11 @@ body {
     }
 
     main {
+      min-height: 100%;
+
       ul li {
-        min-width: 200px;
-        max-width: 200px;
+        min-width: 230px;
+        max-width: 230px;
         font-size: 17px;
         padding: 10px;
       }
@@ -159,7 +185,7 @@ body {
     }
   }
 
-  @media (max-width: 580px) {
+  @media (max-width: 630px) {
     body {
       main ul li {
         min-width: 300px;

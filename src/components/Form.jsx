@@ -13,16 +13,18 @@ export default function Form({ onAddItems }) {
   const [quantity, setQuantity] = useState(1);
 
   const essentialItems = [
+    "Companion 😃",
     "Passport",
     "Money",
-    "Clothes",
-    "Underwear",
-    "Sunglasses",
-    "Medicine",
     "Phone",
+    "Clothes",
+    "Swimsuit",
+    "Hat",
+    "Sunglasses",
+    "Sunscreen",
+    "Medicine",
     "Charger",
-    "Socks",
-    "Companion 😃",
+    "Insect repellent",
   ];
 
   const handleSubmit = (e) => {
