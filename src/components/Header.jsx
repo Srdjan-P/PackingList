@@ -1,9 +1,7 @@
 export default function Header() {
   return (
     <header>
-      <div className="logo-container">
-        <p>🌴 LET'S PACK! 👜</p>
-      </div>
+      <div className="logo-container"></div>
     </header>
   );
 }
