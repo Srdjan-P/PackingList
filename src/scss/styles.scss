@@ -27,7 +27,6 @@ body {
 
   header {
     width: 100vw;
-    min-height: 15vh;
     padding: 10px 20px;
     display: flex;
     justify-content: center;
@@ -43,11 +42,60 @@ body {
 
     .logo-container {
       width: 500px;
-      min-height: 15vh;
+      min-height: 150px;
       background-position: center;
       background-repeat: no-repeat;
       background-size: contain;
-      background-image: url(../img/logo.png);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // background-image: url(../img/logo.png);
+
+      .logo {
+        background-image: url(../img/logoPicture.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 100px;
+        width: 120px;
+
+        animation-name: moveInLeft;
+        animation-duration: 0.8s;
+        animation-timing-function: ease-in;
+      }
+
+      .logoText {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        height: 120px;
+        width: 100%;
+
+        .logoName {
+          height: 60px;
+          width: 380px;
+          background-image: url(../img/logoName.png);
+          background-repeat: no-repeat;
+          background-size: contain;
+
+          animation-name: moveInTop;
+          animation-duration: 0.8s;
+          animation-timing-function: ease-in;
+        }
+
+        .logoSlogan {
+          height: 40px;
+          width: 280px;
+          background-image: url(../img/logoSubText.png);
+          background-repeat: no-repeat;
+          background-size: contain;
+
+          animation-name: moveInBottom;
+          animation-duration: 0.8s;
+          animation-timing-function: ease-in;
+        }
+      }
     }
   }
 
@@ -144,6 +192,10 @@ body {
         overflow: hidden;
         text-overflow: ellipsis;
 
+        animation-name: moveInLeft;
+        animation-duration: 0.3s;
+        animation-timing-function: ease-in;
+
         .check {
           position: absolute;
           left: 0;
@@ -176,7 +228,55 @@ body {
   }
 }
 
-@media (max-width: 720px) {
+@keyframes moveInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+
+  80% {
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  80% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  80% {
+    transform: translateX(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@media (max-width: 800px) {
   body {
     form {
       flex-direction: column;
@@ -187,12 +287,7 @@ body {
     }
 
     main {
-      min-height: 100%;
-
       ul li {
-        min-width: 230px;
-        max-width: 230px;
-        font-size: 17px;
         padding: 10px;
       }
     }
@@ -203,7 +298,7 @@ body {
     }
   }
 
-  @media (max-width: 630px) {
+  @media (max-width: 670px) {
     body {
       main ul li {
         min-width: 300px;
@@ -213,3 +308,11 @@ body {
     }
   }
 }
+
+/*Future plans:
+ 
+Add more categories/lists - Default categories + Users should be able to create their own
+Add search bar
+Change X to Trash can icon
+
+*/
