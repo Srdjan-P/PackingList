@@ -44,10 +44,8 @@ export default function Form({ onAddItems }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <p>What do you need for your trip? 😍</p>
-      </div>
-      <div className="form-inputs">
+      <p>What do you need for your trip? 😍</p>
+      <div className="form-input">
         <Stack className="input-items" spacing={2} sx={{ width: 250 }}>
           <Autocomplete
             id="free-solo-demo"
@@ -60,28 +58,56 @@ export default function Form({ onAddItems }) {
                 newInputValue.charAt(0).toUpperCase() + newInputValue.slice(1);
               setDescription(capitalizedInput);
             }}
-            renderInput={(params) => <TextField {...params} label="Items" />}
+            ListboxProps={{
+              sx: {
+                "& .MuiAutocomplete-option": {
+                  fontSize: "2rem",
+                  minHeight: "4rem",
+                },
+              },
+            }}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                label="Items"
+                sx={{
+                  "& .MuiInputBase-root": {
+                    fontSize: "2rem",
+                    height: "5.4rem",
+                  },
+                  "& .MuiInputLabel-root": {
+                    fontSize: "2rem",
+                  },
+                }}
+              />
+            )}
           />
         </Stack>
+      </div>
+      <div className="form-quantity-button">
         <FormControl className="input-quantity" sx={{ m: 1, minWidth: 80 }}>
-          <InputLabel id="demo-simple-select-helper-label">Quantity</InputLabel>
+          <InputLabel
+            id="demo-simple-select-helper-label"
+            sx={{ fontSize: "1.5rem" }}
+          >
+            Quantity
+          </InputLabel>
           <Select
             labelId="demo-simple-select-helper-label"
             id="demo-simple-select-helper"
             value={quantity}
             label="Quantity"
             onChange={(e) => setQuantity(Number(e.target.value))}
+            sx={{
+              fontSize: "2rem",
+              height: "5.4rem",
+            }}
           >
-            <MenuItem value={1}>1</MenuItem>
-            <MenuItem value={2}>2</MenuItem>
-            <MenuItem value={3}>3</MenuItem>
-            <MenuItem value={4}>4</MenuItem>
-            <MenuItem value={5}>5</MenuItem>
-            <MenuItem value={6}>6</MenuItem>
-            <MenuItem value={7}>7</MenuItem>
-            <MenuItem value={8}>8</MenuItem>
-            <MenuItem value={9}>9</MenuItem>
-            <MenuItem value={10}>10</MenuItem>
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
+              <MenuItem key={num} value={num} sx={{ fontSize: "1.9rem" }}>
+                {num}
+              </MenuItem>
+            ))}
           </Select>
         </FormControl>
         <Button

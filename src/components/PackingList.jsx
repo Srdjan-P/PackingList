@@ -39,7 +39,9 @@ export default function PackingList({
       <div className="actions">
         <Box sx={{ minWidth: 120 }}>
           <FormControl fullWidth>
-            <InputLabel id="demo-simple-select-label">Sort by</InputLabel>
+            <InputLabel id="demo-simple-select-label" sx={{ fontSize: "2rem" }}>
+              Sort by
+            </InputLabel>
             <Select
               labelId="demo-simple-select-label"
               id="demo-simple-select"
@@ -47,10 +49,24 @@ export default function PackingList({
               label="Sort By"
               onChange={(e) => setSortBy(e.target.value)}
               className="sortBy"
+              sx={{
+                fontSize: "2rem",
+                height: "5.4rem",
+                "& .MuiSelect-select": {
+                  display: "flex",
+                  alignItems: "center",
+                },
+              }}
             >
-              <MenuItem value="input">Input order</MenuItem>
-              <MenuItem value="description">Description</MenuItem>
-              <MenuItem value="packed">Packed status</MenuItem>
+              <MenuItem value="input" sx={{ fontSize: "2rem" }}>
+                Input order
+              </MenuItem>
+              <MenuItem value="description" sx={{ fontSize: "2rem" }}>
+                Description
+              </MenuItem>
+              <MenuItem value="packed" sx={{ fontSize: "2rem" }}>
+                Packed status
+              </MenuItem>
             </Select>
           </FormControl>
         </Box>

@@ -14,7 +14,7 @@ export default function Item({ item, onDeleteItem, onPackedItem }) {
         <Checkbox
           {...label}
           className="check"
-          size="medium"
+          size="large"
           sx={{
             color: green[800],
             "&.Mui-checked": {
