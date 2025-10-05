@@ -7,7 +7,7 @@ import Stats from "./components/Stats";
 export default function App() {
   const [items, setItems] = useState(() => {
     const storedValue = localStorage.getItem("items");
-    return JSON.parse(storedValue);
+    return storedValue ? JSON.parse(storedValue) : [];
   });
 
   const handleAddItems = (item) => {

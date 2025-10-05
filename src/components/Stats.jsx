@@ -1,5 +1,5 @@
 export default function Stats({ items }) {
-  if (!items.length)
+  if (!items || !items.length)
     return (
       <footer>
         <em>Let's start packing! 🎉</em>
