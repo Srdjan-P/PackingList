@@ -74,9 +74,15 @@ export default function Form({ onAddItems }) {
                   "& .MuiInputBase-root": {
                     fontSize: "2rem",
                     height: "5.4rem",
+                    display: "flex",
+                    alignItems: "center",
                   },
                   "& .MuiInputLabel-root": {
                     fontSize: "2rem",
+                    transform: "translate(14px, 10px) scale(1)",
+                    "&.MuiInputLabel-shrink": {
+                      transform: "translate(14px, -6px) scale(0.75)",
+                    },
                   },
                 }}
               />

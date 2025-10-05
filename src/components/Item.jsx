@@ -20,6 +20,11 @@ export default function Item({ item, onDeleteItem, onPackedItem }) {
             "&.Mui-checked": {
               color: green[600],
             },
+            "& .MuiSvgIcon-root": {
+              fontSize: "3rem",
+            },
+            padding: "0.8rem",
+            margin: "0 0.7rem",
           }}
           onChange={() => onPackedItem(item.id)}
         />
