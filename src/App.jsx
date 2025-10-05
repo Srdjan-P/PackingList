@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Form from "./components/Form";
 import Header from "./components/Header";
 import PackingList from "./components/PackingList";
 import Stats from "./components/Stats";
 
 export default function App() {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState(() => {
+    const storedValue = localStorage.getItem("items");
+    return JSON.parse(storedValue);
+  });
 
   const handleAddItems = (item) => {
     setItems((items) => [...items, item]);
@@ -30,6 +33,10 @@ export default function App() {
 
     if (confirmed) setItems([]);
   };
+
+  useEffect(() => {
+    localStorage.setItem("items", JSON.stringify(items));
+  }, [items]);
 
   return (
     <>
